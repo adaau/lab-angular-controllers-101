@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="MuseumApp" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MOMA - Museum of Modern Art</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/exhibitController.js"></script>
+  <script src="js/infoController.js"></script>
+  <script src="js/donorController.js"></script>
+</head>
+<body>
+  <section ng-controller="ExhibitController">
+    <h2>Exhibit Info</h2>
+    <div><img ng-src="{{ image }}"></div>
+    <div>{{ name }}</div>
+    <div>By {{ artist }}</div>
+  </section>
+
+  <section ng-controller="InfoController">
+    <div>
+      <h2>General Info</h2>
+      <h3>Hours:</h3>
+      <ul>
+        <li><strong>Sunday to Thursday: </strong>{{ sundayToThursday }}</li>
+        <li><strong>Friday and Saturday: </strong>{{ fridayAndSaturday }}</li>
+      </ul>
+      <h3>Suggested Admission:</h3>
+      <ul>
+        <li>Adults - ${{ adultPrice }}</li>
+        <li>Seniors - ${{ seniorPrice }}</li>
+        <li>Studentss - ${{ studentPrice }}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section ng-controller="DonorController">
+    <h2>Donor Information</h2>
+    <h3>Contact: </h3>
+    <div>{{ email }} | {{ phone }}</div>
+
+    <h3>Donation Amounts</h3>
+    <ul>
+      <li ng-repeat="n in amounts">{{ amounts }}</li>
+    </ul>
+  </section>
+
+
+</body>
+</html>
