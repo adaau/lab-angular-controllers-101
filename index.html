@@ -13,7 +13,7 @@
   <section ng-controller="ExhibitController">
     <h2>Exhibit Info</h2>
     <div><img ng-src="{{ image }}"></div>
-    <div>{{ name }}</div>
+    <div><strong>{{ name }}</strong></div>
     <div>By {{ artist }}</div>
   </section>
 
@@ -39,7 +39,7 @@
     <h3>Contact: </h3>
     <div>{{ email }} | {{ phone }}</div>
 
-    <h3>Donation Amounts</h3>
+    <h3>Donation Amounts:</h3>
     <ul>
       <li ng-repeat="n in amounts">{{ amounts }}</li>
     </ul>
